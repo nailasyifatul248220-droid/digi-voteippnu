@@ -9,7 +9,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #cfe8d5;
+    background: #cfe8d5 ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,7 +86,7 @@ button:hover {
     </div>
 
     <div class="input-box">
-        <input type="password" placeholder="Masukkan Kode">
+        <input type="password" placeholder="Masukkan Kode" i class="fa-regular fa-eye-slash"></i>
     </div>
 
     <button>MASUK</button>
