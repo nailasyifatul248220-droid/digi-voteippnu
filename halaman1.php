@@ -74,8 +74,7 @@ button:hover {
 <body>
 
 <div class="card">
-    <!-- Ganti src dengan logo IPPNU kamu -->
-    <img src="logo.png" class="logo">
+    <img src="c:\Users\RPL\Downloads\logo IPPNU new.png" class="logo">
 
     <h2>DIGI-VOTE KETUA IPPNU</h2>
     <h2>DESA TEGAL SARI</h2>
