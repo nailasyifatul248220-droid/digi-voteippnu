@@ -82,7 +82,7 @@ button:hover {
     <p>Silahkan masuk untuk memberikan hak suara</p>
 
     <div class="input-box">
-        <input type="text" placeholder="Masukkan Nomor Anggota">
+        <input type="number" placeholder="Masukkan Nomor Anggota">
     </div>
 
     <div class="input-box">
