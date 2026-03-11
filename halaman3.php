@@ -4,132 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * {
+    <style> 
+    * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Serif', 'Palatino Linotype', 'Book Antiqua', serif; 
 }
 
 body {
-    background-color: #C1E1C1; 
-    background-image: radial-gradient(circle, #d4edda 10%, transparent 20%); 
-    background-size: 30px 30px;
+    background: #bcd9c4;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.container {
+.app-wrapper {
     display: flex;
-    height: 100vh;
+    height: 100%;
 }
 
 .sidebar {
-    width: 150px;
-    background-color: rgba(0, 0, 0, 0.1);
+    width: 130px;
+    background-color: rgba(144, 191, 161, 0.6); 
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-.logo-text {
-    font-weight: bold;
-    margin-bottom: 100px;
+    justify-content: space-between;
+    padding: 30px 15px;
+    color: #f0f0f0;
     text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.2);
 }
 
-.menu-item {
-    margin-bottom: 30px;
+.nav-item {
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
     cursor: pointer;
-    text-align: center;
+    line-height: 1.2;
+}
+
+.nav-item.active {
+    color: #fff;
+    font-weight: bold;
 }
 
 .logout {
-    margin-top: auto;
+    font-size: 1.1rem;
     cursor: pointer;
 }
 
 .main-content {
     flex: 1;
-    padding: 40px;
-    text-align: center;
-}
-
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
-    margin-bottom: 50px;
-}
-
-header h1 {
-    font-size: 2rem;
-    letter-spacing: 2px;
-    color: #333;
-}
-
-.top-logo {
-    position: absolute;
-    right: 0;
-    height: 80px;
-}
-
-.candidate-list {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    width: 200px;
+    padding: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.card h3 {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    color: #444;
+.logo-top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 70px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
-.photo-placeholder {
-    width: 150px;
-    height: 180px;
-    background: #eee;
-    margin-bottom: 15px;
+.title {
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+    color: #1a1a1a;
+    margin-bottom: 60px;
+    font-weight: normal;
+}
+
+.candidate-container {
+    display: flex;
+    gap: 40px;
+}
+
+.card {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); 
+    text-align: center;
+    width: 220px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+.image-box {
+    width: 100%;
+    height: 200px;
+    background: #f0f0f0;
+    margin-bottom: 20px;
+    border-radius: 10px;
     overflow: hidden;
-    border-radius: 5px;
 }
 
-.photo-placeholder img {
+.image-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 .btn-detail {
-    background-color: #28a745;
+    background-color: #2b7a3a;
     color: white;
     border: none;
-    padding: 8px 25px;
-    border-radius: 8px;
-    cursor: pointer;
+    padding: 10px 35px;
+    border-radius: 10px;
+    font-size: 0.9rem;
     font-weight: bold;
-    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .btn-detail:hover {
-    background-color: #218838;
+    background-color: #215d2c;
 }
     </style>
-    
 </head>
 <body>
     <!DOCTYPE html>
@@ -141,49 +146,48 @@ header h1 {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="container">
+    <div class="app-wrapper">
         <nav class="sidebar">
-            <div class="logo-text">Sistem<br>E-voting</div>
-            <div class="menu-item active">Voting</div>
-            <div class="menu-item">Hasil Voting</div>
-            <div class="logout">Log Out <span>→</span></div>
+            <div class="menu-top">
+                <div class="nav-item">Sistem<br>E-voting</div>
+                <div class="nav-item active">Voting</div>
+                <div class="nav-item">Hasil<br>Voting</div>
+            </div>
+            <div class="logout">Log Out <span class="arrow">→</span></div>
         </nav>
 
         <main class="main-content">
-            <header>
-                <h1>DAFTAR KANDIDAT</h1>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Logo_IPPNU.png/600px-Logo_IPPNU.png" alt="Logo" class="top-logo">
-            </header>
+            <img src="logo.png" alt="Logo" class="logo-top-right">
+            
+            <h1 class="title">DAFTAR KANDIDAT</h1>
 
-            <section class="candidate-list">
+            <div class="candidate-container">
                 <div class="card">
-                    <h3>KANDIDAT 1</h3>
-                    <div class="photo-placeholder">
-                        <img src="https://via.placeholder.com/150x180" alt="Foto Kandidat">
+                    <h2>KANDIDAT 1</h2>
+                    <div class="image-box">
+                        <img src="kandidat1.png" alt="Foto">
                     </div>
                     <button class="btn-detail">DETAIL</button>
                 </div>
 
                 <div class="card">
-                    <h3>KANDIDAT 2</h3>
-                    <div class="photo-placeholder">
-                        <img src="https://via.placeholder.com/150x180" alt="Foto Kandidat">
+                    <h2>KANDIDAT 2</h2>
+                    <div class="image-box">
+                        <img src="kandidat2.png" alt="Foto">
                     </div>
                     <button class="btn-detail">DETAIL</button>
                 </div>
 
                 <div class="card">
-                    <h3>KANDIDAT 3</h3>
-                    <div class="photo-placeholder">
-                        <img src="https://via.placeholder.com/150x180" alt="Foto Kandidat">
+                    <h2>KANDIDAT 3</h2>
+                    <div class="image-box">
+                        <img src="kandidat3.png" alt="Foto">
                     </div>
                     <button class="btn-detail">DETAIL</button>
                 </div>
-            </section>
+            </div>
         </main>
     </div>
-
 </body>
 </html>
 </body>
