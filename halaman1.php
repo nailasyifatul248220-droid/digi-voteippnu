@@ -9,7 +9,15 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #cfe8d5;
+
+    background-image: 
+        linear-gradient(rgba(207,232,213,0.9), rgba(207,232,213,0.9)),
+        url("batik.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,27 +77,30 @@ button:hover {
     background: #245a2f;
 }
 </style>
+
 </head>
 
 <body>
 
 <div class="card">
-    <img src="c:\Users\RPL\Downloads\logo IPPNU new.png" class="logo">
 
-    <h2>DIGI-VOTE KETUA IPPNU</h2>
-    <h2>DESA TEGAL SARI</h2>
+<img src="c:\Users\RPL\Downloads\logo IPPNU new.png" class="logo">
 
-    <p>Silahkan masuk untuk memberikan hak suara</p>
+<h2>DIGI-VOTE KETUA IPPNU</h2>
+<h2>DESA TEGAL SARI</h2>
 
-    <div class="input-box">
-        <input type="Number" placeholder="Masukkan Nomor Anggota">
-    </div>
+<p>Silahkan masuk untuk memberikan hak suara</p>
 
-    <div class="input-box">
-        <input type="password" placeholder="Masukkan Kode">
-    </div>
+<div class="input-box">
+<input type="number" placeholder="Masukkan Nomor Anggota">
+</div>
 
-    <button>MASUK</button>
+<div class="input-box">
+<input type="password" placeholder="Masukkan Kode">
+</div>
+
+<button>MASUK</button>
+
 </div>
 
 </body>
